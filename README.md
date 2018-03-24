@@ -41,7 +41,7 @@
 # 需要透過 git 複製腳本資料下來到新機器上
 rm -rfv /tmp/aurora-rails-5-v2-web-server
 sudo apt -y update 
-sudo apt-get install -y git
+sudo apt install -y git
 git clone https://github.com/guanting112/aurora-rails-5-v2-web-server.git --branch master --single-branch /tmp/aurora-rails-5-v2-web-server
 
 # 0-machine-setting.sh 是整套腳本的基本設定，可以讓你設定 git repo、ssh key、ssh port、部署帳號的名稱、密碼等等
