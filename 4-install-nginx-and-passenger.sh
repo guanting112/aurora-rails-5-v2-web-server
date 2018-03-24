@@ -10,7 +10,7 @@ function run_script_install_nginx_and_passenger()
 
 function update_phusion_dpkg()
 {
-  echo "Update apt-get ( Phusion's APT repository )" | shell_log
+  echo "Use Phusion's APT repository " | shell_log
   echo 'deb https://oss-binaries.phusionpassenger.com/apt/passenger xenial main' | sudo tee /etc/apt/sources.list.d/passenger.list > /dev/null
   sudo chown root: /etc/apt/sources.list.d/passenger.list
   sudo chmod 644 /etc/apt/sources.list.d/passenger.list
@@ -21,16 +21,16 @@ function install_nginx_and_passenger()
 {
   echo "Install Nginx and passenger" | shell_log
 
-  sudo apt-get install -y nginx-extras passenger | shell_message "apt-get/nginx-passenger"
+  sudo apt install -y nginx-extras passenger 
 }
 
 function install_phusion_pgp_key()
 {
   echo "Install phusion pgp key" | shell_log
 
-  sudo apt-get install -y dirmngr gnupg 
+  sudo apt install -y dirmngr gnupg 
   sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 561F9B9CAC40B2F7
-  sudo apt-get install -y apt-transport-https ca-certificates
+  sudo apt install -y apt-transport-https ca-certificates
 }
 
 function setting_nginx_and_passenger_conf()

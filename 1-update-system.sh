@@ -26,14 +26,14 @@ function setup_base()
   sudo apt -y upgrade 
 
   echo "Add HTTPS support to APT" | shell_log
-  sudo apt-get install -y apt-transport-https ca-certificates 
+  sudo apt install -y apt-transport-https ca-certificates 
 
   echo "Install basic software" | shell_log
-  sudo apt-get install -y vim git tmux htop bmon ncdu iptraf pwgen dirmngr gnupg 
-  sudo apt-get install -y git-core curl libffi-dev zlib1g-dev build-essential software-properties-common 
-  sudo apt-get install -y libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 
-  sudo apt-get install -y libxml2-dev libxslt1-dev libcurl4-openssl-dev python-software-properties 
-  sudo apt-get install -y nodejs 
+  sudo apt install -y vim git tmux htop bmon ncdu iptraf pwgen dirmngr gnupg 
+  sudo apt install -y git-core curl libffi-dev zlib1g-dev build-essential software-properties-common 
+  sudo apt install -y libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 
+  sudo apt install -y libxml2-dev libxslt1-dev libcurl4-openssl-dev python-software-properties 
+  sudo apt install -y nodejs 
 
   echo "Setting Host Name Server" | shell_log
   echo -e "nameserver 8.8.4.4\nnameserver 208.67.220.220" | sudo tee /etc/resolv.conf > /dev/null

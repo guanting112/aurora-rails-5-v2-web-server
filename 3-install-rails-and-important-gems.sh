@@ -46,7 +46,7 @@ function install_image_magick()
 {
   echo "Install Image Magick and 'magickwand-dev' " | shell_log
 
-  sudo apt-get install -y imagemagick libmagickwand-dev | shell_message "apt-get/image-magick"
+  sudo apt install -y imagemagick libmagickwand-dev 
 }
 
 function install_rails()
@@ -58,8 +58,8 @@ function install_rails()
   if [ $image_magick_is_installed == 1 ]
   then
     echo "Install Rails, Mailgun, Backup, Rest-Client " | shell_log
-    gem install rails -v "~>5.1" 2>&1 | shell_message "rails-5-1"
-    gem install rest-client mailgun backup whenever 2>&1 | shell_message "gem(s)"
+    gem install rails -v "~>5.1" 
+    gem install rest-client mailgun backup whenever 
   else
     echo "Rails needs to install imagemagick" | shell_error
   fi

@@ -42,15 +42,15 @@ function install_database_server()
   echo "mariadb-server-10.2 mysql-server/root_password_again password $SQL_ROOT_PASSWORD" | sudo debconf-set-selections
 
   echo "Install Database Server (MariaDB Server)" | shell_log
-  sudo apt-get install -y mariadb-server | shell_message "apt-get/mariadb-server"
+  sudo apt install -y mariadb-server 
 
   echo "Install Database Client and Dev file (MariaDB Server)" | shell_log
-  sudo apt-get install -y mariadb-client libmariadbclient-dev | shell_message "apt-get/mariadb-client,libmariadbclient-dev"
+  sudo apt install -y mariadb-client libmariadbclient-dev 
 
   if [ -d ~/.rbenv/versions/ ] && [[ "`ruby -v`" =~ "ruby 2" ]]
   then
     echo "Install MySQL2 ruby gem " | shell_log
-    gem install mysql2 2>&1 | shell_message "gem/mysql2"
+    gem install mysql2 
   fi
 }
 
