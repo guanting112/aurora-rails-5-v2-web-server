@@ -53,7 +53,7 @@ function install_ruby()
 {
   echo "Start compile ruby $RUBY_VERSION" | shell_log
   rm -rfv ~/.rbenv/versions/$RUBY_VERSION > /dev/null
-  rbenv install $RUBY_VERSION --verbose 2>&1 | shell_message ruby-build
+  rbenv install $RUBY_VERSION --verbose 
 
   if [ -d ~/.rbenv/versions/$RUBY_VERSION ]
   then
