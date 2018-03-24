@@ -17,8 +17,9 @@ function setup_base()
   echo -e "LC_ALL=\"en_US.UTF-8\"\nLANGUAGE=\"en_US.UTF-8\"\nLANG=\"en_US.UTF-8\"" | sudo tee /etc/default/locale > /dev/null
   sudo dpkg-reconfigure -f noninteractive locales 
 
-  echo "Update timezone" | shell_log
-  echo "Asia/Taipei" | sudo tee /etc/timezone > /dev/null
+  echo "Update timezone" | shell_log 
+  echo "Asia/Taipei" | sudo tee /etc/timezone
+  sudo cp /usr/share/zoneinfo/Asia/Taipei /etc/localtime
   sudo dpkg-reconfigure -f noninteractive tzdata 
 
   echo "Update and upgrade system" | shell_log
