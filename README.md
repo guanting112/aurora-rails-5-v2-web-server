@@ -40,6 +40,7 @@
 
 # 需要透過 git 複製腳本資料下來到新機器上
 rm -rfv /tmp/aurora-rails-5-v2-web-server
+sudo apt -y update 
 sudo apt-get install -y git
 git clone https://github.com/guanting112/aurora-rails-5-v2-web-server.git --branch master --single-branch /tmp/aurora-rails-5-v2-web-server
 
