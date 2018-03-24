@@ -4,6 +4,8 @@
 
 * Version: 1.0.1 ( 20180324 )
 
+![](https://i.imgur.com/MxzRD0P.jpg)
+
 # 系統要求
 
 * Ubuntu 16.04 作業系統
