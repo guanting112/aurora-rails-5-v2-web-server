@@ -115,8 +115,8 @@ SQL_BACKUP_PASSWORD=$SQL_BACKUP_PASSWORD
   sudo chmod 0400 /home/$DEPLOY_USER_NAME/.stickie
 
   echo "New User Account ( for Application ) "
-  echo "$DEPLOY_USER_NAME"
-  echo "$DEPLOY_USER_PASSWORD"
+  echo "new username: $DEPLOY_USER_NAME"
+  echo "new password: $DEPLOY_USER_PASSWORD"
 }
 
 unset_variable()
