@@ -18,6 +18,10 @@ copy_setup_scripts()
 
 run_node_boot_script()
 {
+  export LC_ALL=en_US.UTF-8
+  export LANGUAGE=en_US.UTF-8
+  export LANG=en_US.UTF-8
+
   load_setting_file
   load_setting
   add_deploy_user
