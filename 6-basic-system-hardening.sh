@@ -22,7 +22,7 @@ function fix_sshd_config()
 function reload_sshd()
 {
   echo "Reload SSH Deamon" | shell_log
-  sudo reload ssh
+  sudo /etc/init.d/ssh reload 
 }
 
 function add_reboot_not_use_sudo_to_apps_user()
