@@ -131,8 +131,8 @@ http {
   # Logging Settings
   ##
 
-  access_log /var/log/nginx/access.log;
-  error_log /var/log/nginx/error.log;
+  access_log /var/log/nginx/access.log combined buffer=512k;
+  error_log /var/log/nginx/error.log crit;
 
   ##
   # Gzip Settings
@@ -161,6 +161,9 @@ http {
   passenger_root /usr/lib/ruby/vendor_ruby/phusion_passenger/locations.ini;
   passenger_ruby [RUBY_ROOT];
   passenger_show_version_in_header off;
+  passenger_max_pool_size 6;
+  passenger_min_instances 2;
+  passenger_max_request_queue_size 500;
 
   include /etc/nginx/conf.d/*.conf;
   include /etc/nginx/sites-enabled/*;
