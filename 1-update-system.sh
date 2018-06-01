@@ -18,9 +18,7 @@ function setup_base()
   sudo dpkg-reconfigure -f noninteractive locales 
 
   echo "Update timezone" | shell_log 
-  echo "Asia/Taipei" | sudo tee /etc/timezone
-  sudo cp /usr/share/zoneinfo/Asia/Taipei /etc/localtime
-  sudo dpkg-reconfigure -f noninteractive tzdata 
+  sudo timedatectl set-timezone Asia/Taipei 
 
   echo "Update and upgrade system" | shell_log
   sudo apt -y update 
