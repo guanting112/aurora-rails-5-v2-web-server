@@ -254,7 +254,11 @@ server {
   root        [PUBLIC_ROOT];
 
   if ( $http_user_agent ~* (WGET|CURL) ) {
-      return 404;
+    return 404;
+  }
+
+  if ( $http_user_agent ~* (SEMRUSH|AHREFS|MJ12BOT|DOTBOT) ) {
+    return 200;
   }
 
   location ~ /\.ht {
