@@ -58,8 +58,9 @@ function install_rails()
   if [ $image_magick_is_installed == 1 ]
   then
     echo "Install Rails, Mailgun, Backup, Rest-Client " | shell_log
-    gem install rails -v "~>5.1" 
-    gem install rest-client mailgun backup whenever 
+    gem install rails -v "~>5.1.0" 
+    gem install rest-client mailgun whenever 
+    gem install backup -v "5.0.0.beta.2"
   else
     echo "Rails needs to install imagemagick" | shell_error
   fi
