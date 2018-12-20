@@ -1,6 +1,6 @@
 #!/bin/bash
 
-RUBY_VERSION=2.5.1
+RUBY_VERSION=2.5.3
 
 function run_script_install_ruby()
 {

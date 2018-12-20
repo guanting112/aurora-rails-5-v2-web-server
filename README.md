@@ -2,7 +2,7 @@
 # Aurora Rails 5 v2 Web Server
 # 極光 Rails 5 專屬伺服器 安裝包
 
-* Version: 1.0.2 ( 20180402 )
+* Version: 1.0.4 ( 20181220 )
 
 ![](https://i.imgur.com/MxzRD0P.jpg)
 

@@ -131,7 +131,7 @@ http {
   # Logging Settings
   ##
 
-  access_log /var/log/nginx/access.log combined buffer=512k;
+  access_log /var/log/nginx/access.log combined buffer=2048k;
   error_log /var/log/nginx/error.log crit;
 
   ##

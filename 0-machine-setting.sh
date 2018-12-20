@@ -4,7 +4,7 @@ load_setting()
 {
 
   # This script version
-  SCRIPT_VERSION="1.0.2-20180402"
+  SCRIPT_VERSION="1.0.4-20181220"
 
   # Host new SSH Port
   HOST_NEW_SSH_PORT="56888"

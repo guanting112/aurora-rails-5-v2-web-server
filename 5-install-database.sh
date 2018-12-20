@@ -161,7 +161,7 @@ innodb_file_per_table = 1
 innodb_stats_on_metadata = 0
 innodb_open_files = 2000
 innodb_purge_threads = 1
-innodb_lock_wait_timeout = 120
+innodb_lock_wait_timeout = 150
 
 query_cache_size = 128M
 query_cache_limit = 4M
