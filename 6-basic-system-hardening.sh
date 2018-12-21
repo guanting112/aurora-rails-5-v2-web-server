@@ -31,7 +31,7 @@ function add_reboot_not_use_sudo_to_apps_user()
 [DEPLOY_USER_NAME] ALL=NOPASSWD:/sbin/reboot
 ' | sudo tee /etc/sudoers.d/$DEPLOY_USER_NAME > /dev/null
 
-  sudo sed -r "s:\[DEPLOY_USER_NAME\]:$DEPLOY_USER_NAME:g" /etc/sudoers.d/$DEPLOY_USER_NAME
+  sudo sed -r "s:\[DEPLOY_USER_NAME\]:$DEPLOY_USER_NAME:g" -i /etc/sudoers.d/$DEPLOY_USER_NAME
 }
 
 function run_script_system_hardening()
