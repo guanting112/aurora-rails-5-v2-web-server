@@ -6,6 +6,8 @@ function run_script_install_nginx_and_passenger()
   update_phusion_dpkg
   install_nginx_and_passenger
   setting_nginx_and_passenger_conf
+
+  sudo service nginx restart
 }
 
 function update_phusion_dpkg()

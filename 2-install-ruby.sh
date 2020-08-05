@@ -1,6 +1,6 @@
 #!/bin/bash
 
-RUBY_VERSION=2.5.3
+RUBY_VERSION=2.5.8
 
 function run_script_install_ruby()
 {
@@ -41,7 +41,7 @@ function init_rbenv_to_deploy_account()
     echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bash_profile
     echo 'eval "$(rbenv init -)"' >> ~/.bash_profile
 
-    echo "gem: --no-ri --no-rdoc --verbose" > ~/.gemrc
+    echo "gem: --no-ri --no-rdoc --no-document --verbose" > ~/.gemrc
 
     echo "<rbenv> completed" | shell_log
   else

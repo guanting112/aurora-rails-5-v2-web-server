@@ -36,11 +36,10 @@ run_node_boot_script()
 
 write_ssh_key()
 {
+  sudo rm -rfv /home/$DEPLOY_USER_NAME/.ssh/$GIT_REPO_DEPLOY_PRIVATE_KEY_NAME
+  sudo rm -rfv /home/$DEPLOY_USER_NAME/.ssh/$GIT_REPO_DEPLOY_PRIVATE_KEY_NAME.pub
   sudo mkdir -p /home/$DEPLOY_USER_NAME/.ssh
-
-  printf '%s' "$GIT_REPO_DEPLOY_PUBLIC_KEY_DATA" | sudo tee /home/$DEPLOY_USER_NAME/.ssh/$GIT_REPO_DEPLOY_PRIVATE_KEY_NAME.pub > /dev/null
-
-  printf '%s' "$GIT_REPO_DEPLOY_PRIVATE_KEY_DATA" | sudo tee /home/$DEPLOY_USER_NAME/.ssh/$GIT_REPO_DEPLOY_PRIVATE_KEY_NAME > /dev/null
+  sudo ssh-keygen -t rsa -f /home/$DEPLOY_USER_NAME/.ssh/$GIT_REPO_DEPLOY_PRIVATE_KEY_NAME -q -N ""
 
   sudo chown -R $DEPLOY_USER_NAME:$DEPLOY_USER_NAME /home/$DEPLOY_USER_NAME/.ssh
   sudo chmod 700 /home/$DEPLOY_USER_NAME/.ssh

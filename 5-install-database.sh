@@ -82,6 +82,13 @@ CREATE TABLE `[MAIN_DATABASE_NAME]`.`test` (
   PRIMARY KEY (`id`)
 ) ENGINE=MEMORY DEFAULT CHARSET=utf8;
 
+-- Remove Root Account File Permission --
+UPDATE mysql.user SET File_priv = "N" WHERE User != "debian-sys-maint";
+REVOKE FILE ON *.* FROM "root"@"localhost";
+REVOKE FILE ON *.* FROM "root"@"127.0.0.1";
+REVOKE FILE ON *.* FROM "root"@"::1";
+FLUSH PRIVILEGES;
+
 -- Flush Privileges --
 FLUSH PRIVILEGES;
 ' | sudo tee ~/.reset-sql > /dev/null

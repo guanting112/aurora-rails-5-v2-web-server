@@ -13,10 +13,10 @@ function fix_sshd_config()
   fi
 
   echo "Modify sshd config" | shell_log
-  sudo sed -r "s:^Port[^$]+$:Port $HOST_NEW_SSH_PORT:g" -i /etc/ssh/sshd_config
-  sudo sed -r 's:^PermitRootLogin[^$]+$:PermitRootLogin without-password:g' -i /etc/ssh/sshd_config
-  sudo sed -r 's:^PermitEmptyPasswords[^$]+$:PermitEmptyPasswords no:g' -i /etc/ssh/sshd_config
-  echo -e "\nAllowUsers $DEPLOY_USER_NAME\n" | sudo tee -a /etc/ssh/sshd_config > /dev/null
+  echo -e "\nPort $HOST_NEW_SSH_PORT" | sudo tee -a /etc/ssh/sshd_config > /dev/null
+  echo -e "PermitRootLogin without-password" | sudo tee -a /etc/ssh/sshd_config > /dev/null
+  echo -e "PermitEmptyPasswords no" | sudo tee -a /etc/ssh/sshd_config > /dev/null
+  echo -e "AllowUsers $DEPLOY_USER_NAME" | sudo tee -a /etc/ssh/sshd_config > /dev/null
 }
 
 function reload_sshd()
